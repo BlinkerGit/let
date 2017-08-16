@@ -28,6 +28,10 @@ dependencies {
     compile 'org.aspectj:aspectjrt:1.8.6'
 }
 
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 modifyPom {
     project {
         name POM_NAME
