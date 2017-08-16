@@ -16,12 +16,11 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url "https://jitpack.io" }
 //        mavenLocal()
 //        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     dependencies {
-        classpath 'com.github.blinkergit.let:let-plugin:master-SNAPSHOT'
+        classpath 'com.canelmas.let:let-plugin:0.1.11'
     }
 }
 
@@ -30,7 +29,6 @@ apply plugin: 'let'
 
 repositories {
     jcenter()
-    maven { url "https://jitpack.io" }
 //    mavenLocal()
 //    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
