@@ -39,7 +39,7 @@ public final class Let {
      * @param grantResults Result list received in {@link android.app.Activity#onRequestPermissionsResult(int, String[], int[])}
      *                     or {@link android.app.Fragment#onRequestPermissionsResult(int, String[], int[])}
      */
-    public static void handle(Object source, int requestCode, String[] permissions, int[] grantResults) {
+    public static void handle(Object source, RuntimePermissionListener listener, int requestCode, String[] permissions, int[] grantResults) {
 
         final DelayedTasks.Task delayedTask = DelayedTasks.get(requestCode);
 
@@ -76,7 +76,9 @@ public final class Let {
 
             } else {
 
-                RuntimePermissionListener listener = RuntimePermissionListener.class.isInstance(source) ? (RuntimePermissionListener) source : null;
+                if (listener == null) {
+                    listener = RuntimePermissionListener.class.isInstance(source) ? (RuntimePermissionListener) source : null;
+                }
 
                 if (null != listener) {
                     Logger.log("<<< should handle denied permissions");
@@ -89,6 +91,11 @@ public final class Let {
             Logger.log("No delayed task to execute.");
         }
 
+    }
+
+
+    public static void handle(Object source, int requestCode, String[] permissions, int[] grantResults) {
+        handle(source, source, requestCode, permissions, grantResults);
     }
 
 }
