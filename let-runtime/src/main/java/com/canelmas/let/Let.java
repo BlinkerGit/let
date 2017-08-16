@@ -95,7 +95,7 @@ public final class Let {
 
 
     public static void handle(Object source, int requestCode, String[] permissions, int[] grantResults) {
-        handle(source, source, requestCode, permissions, grantResults);
+        handle(source, (RuntimePermissionListener) source, requestCode, permissions, grantResults);
     }
 
 }
