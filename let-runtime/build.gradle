@@ -20,6 +20,7 @@ import org.aspectj.tools.ajc.Main
 buildscript {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 
     dependencies {
