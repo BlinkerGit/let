@@ -44,7 +44,7 @@ class LetPlugin implements Plugin<Project> {
 
         project.dependencies {
             compile 'com.github.blinkergit.let:let-runtime:0.1.14'
-            compile 'org.aspectj:aspectjrt:1.8.6'
+            compile 'org.aspectj:aspectjrt:1.8.10'
             compile 'com.github.blinkergit.let:let-annotations:0.1.14'
         }
 
